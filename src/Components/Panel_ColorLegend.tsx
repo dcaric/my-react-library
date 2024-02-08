@@ -6,7 +6,7 @@ const initialData  = [
     {
       name: "Segment",
       checked: true,
-      value: "sector",
+      value: "Segment",
       colorLegendItems: [
         { text: "Item 1", color: { r: 255, g: 0, b: 0, a: 1 }, count: 10 },
         { text: "Item 2", color: { r: 0, g: 255, b: 0, a: 0.8 }, count: 20 },
@@ -16,7 +16,7 @@ const initialData  = [
     {
       name: "PSC/PCI",
       checked: false,
-      value: "pci",
+      value: "PSC/PCI",
       colorLegendItems: [
         { text: "Item 1", color: { r: 255, g: 255, b: 0, a: 1 }, count: 15 },
         { text: "Item 2", color: { r: 255, g: 0, b: 255, a: 0.8 }, count: 25 },
