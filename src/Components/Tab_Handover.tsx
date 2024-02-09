@@ -4,7 +4,7 @@ import Panel_ColorLegend from "./Panel_ColorLegend";
 
 const Tab_Handover: React.FC<IProps> = (props) => {
     const { legendData } = props;
-    
+
     const [selectedLegend, setSelectedLegend] = useState(legendData[0].name);
 
     const handleSelectionChange = (selectedKey: string) => {
@@ -33,7 +33,6 @@ const Tab_Handover: React.FC<IProps> = (props) => {
         />
     );
 };
-
 
 export default Tab_Handover;
 interface ColorLegendItem {
