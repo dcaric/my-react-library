@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import "./GroupPicker.css";
 
-const GroupPick: React.FC<IProps> = ({ items, onChange }) => {
+const GroupPick: React.FC<IProps> = (props) => {
+    const { legendData, onChange } = props;
+    console.log("dario: GroupPick legendData: ", legendData);
+
+
+    useEffect(() => {
+        console.log("dario: (0) GroupPick.useEffect legendData: ", legendData);
+    }, []);
+
+    useEffect(() => {
+        console.log("dario: GroupPick.useEffect legendData: ", legendData);
+    }, [legendData]);
+
     return (
-        <div>
-            {items.map(item => (
+        <>
+            {legendData.map(item => (
                 <div key={item.name} className="custom-radio-container">
                     <input
                         type="radio"
@@ -19,13 +31,27 @@ const GroupPick: React.FC<IProps> = ({ items, onChange }) => {
                 </div>
 
             ))}
-        </div>
+        </>
     );
 };
 
 export default GroupPick;
 
 interface IProps {
-    items: { name: string; checked: boolean; value: string}[];
+    legendData: {
+        name: string;
+        checked: boolean;
+        value: string;
+        colorLegendItems: {
+            text: string;
+            color: {
+                r: number;
+                g: number;
+                b: number;
+                a: number;
+            };
+            count: number;
+        }[];
+    }[];
     onChange: (selectedKey: string) => void;
 }
