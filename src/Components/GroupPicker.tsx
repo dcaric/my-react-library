@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./GroupPicker.css";
 
 const GroupPick: React.FC<IProps> = (props) => {
-    const { legendData, onChange } = props;
-    console.log("dario: GroupPick legendData: ", legendData);
-
-
-    useEffect(() => {
-        console.log("dario: (0) GroupPick.useEffect legendData: ", legendData);
-    }, []);
-
+    const { legendData, selectedKey, onChange } = props;
+    
     useEffect(() => {
         console.log("dario: GroupPick.useEffect legendData: ", legendData);
     }, [legendData]);
@@ -22,14 +16,13 @@ const GroupPick: React.FC<IProps> = (props) => {
                         type="radio"
                         id={item.name}
                         name="groupPick"
-                        checked={item.checked}
+                        checked={selectedKey === item.name} // Determine checked state by comparing to selectedKey
                         value={item.value}
                         className="custom-radio-input"
                         onChange={() => onChange(item.name)}
                     />
                     <label htmlFor={item.name} className="custom-radio-label">{item.value}</label>
                 </div>
-
             ))}
         </>
     );
@@ -38,20 +31,10 @@ const GroupPick: React.FC<IProps> = (props) => {
 export default GroupPick;
 
 interface IProps {
-    legendData: {
-        name: string;
-        checked: boolean;
-        value: string;
-        colorLegendItems: {
-            text: string;
-            color: {
-                r: number;
-                g: number;
-                b: number;
-                a: number;
-            };
-            count: number;
-        }[];
-    }[];
+    legendData: Array<{
+        name: string; 
+        value: string; 
+    }>;
+    selectedKey: string;
     onChange: (selectedKey: string) => void;
 }
