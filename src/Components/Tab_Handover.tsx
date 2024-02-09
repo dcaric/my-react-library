@@ -50,7 +50,6 @@ const Tab_Handover: React.FC<IProps> = (props) => {
         }));
         _setState_setDataColorLegend(newData); // Directly set the new array
     };
-    
 
     return (
         <>
