@@ -3,10 +3,6 @@ import "./GroupPicker.css";
 
 const GroupPick: React.FC<IProps> = (props) => {
     const { legendData, selectedKey, onChange } = props;
-    
-    useEffect(() => {
-        console.log("dario: GroupPick.useEffect legendData: ", legendData);
-    }, [legendData]);
 
     return (
         <>
@@ -16,7 +12,7 @@ const GroupPick: React.FC<IProps> = (props) => {
                         type="radio"
                         id={item.name}
                         name="groupPick"
-                        checked={selectedKey === item.name} // Determine checked state by comparing to selectedKey
+                        checked={selectedKey === item.name}
                         value={item.value}
                         className="custom-radio-input"
                         onChange={() => onChange(item.name)}
