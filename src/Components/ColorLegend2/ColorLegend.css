@@ -14,13 +14,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 98%; /* Ensures it fills the parent */
+  width: 98%;
   height: 40px; /* Adjust height as needed */
   padding: 0px 10px; /* Padding inside the bar for text and stats */
 }
 
 .color-legend-text {
-  color: black; /* Ensures text is readable against the bar background */
+  color: black;
 }
 
 .color-legend-stats {
@@ -29,6 +29,6 @@
 }
 
 .color-legend-count, .color-legend-percentage {
-  color: black; /* Ensures text is readable */
+  color: black;
   margin-left: 8px; /* Provides spacing between count and percentage */
 }
