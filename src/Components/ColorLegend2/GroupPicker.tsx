@@ -9,11 +9,16 @@ export const GroupPicker: React.FC<IProps> = (props) => {
         console.log("dario: GroupPicker useEffect props:", props);
     }, [props]);
 
+    const generateRandomKey = () => {
+        const randomString = Math.random().toString(36).substring(7);
+        const timestamp = new Date().getTime();
+        return `${randomString}_${timestamp}`;
+    };
 
     return (
         <>
             {props.legendData.map(item => (
-                <div key={item.name} className="custom-radio-container">
+                <div key={generateRandomKey()} className="custom-radio-container">
                     <input
                         type="radio"
                         id={item.name}
