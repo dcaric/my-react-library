@@ -10,6 +10,7 @@ export const Panel_ColorLegend2: React.FC<IProps> = (props) => {
                 legendData={props.groupPickLegendData}
                 selectedKey={props.selectedGroupKey}
                 onChange={props.onChange}
+                pickerName={props.pickerName}
             />
             <ColorLegend colorLegendItems={props.colorLegendData} />
         </>
@@ -30,6 +31,7 @@ interface ColorLegendItem {
 
 
 interface IProps {
+    pickerName: string;
     colorLegendData: ColorLegendItem[];
     onChange: (selectedKey: string) => void;
     groupPickLegendData: Array<{ name: string; value: string}>;

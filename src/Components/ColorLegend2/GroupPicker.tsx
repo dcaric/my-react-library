@@ -17,7 +17,7 @@ export const GroupPicker: React.FC<IProps> = (props) => {
                     <input
                         type="radio"
                         id={item.name}
-                        name="groupPick"
+                        name={props.pickerName}
                         checked={props.selectedKey === item.name}
                         value={item.value}
                         className="custom-radio-input"
@@ -35,6 +35,7 @@ export const GroupPicker: React.FC<IProps> = (props) => {
 
 
 interface IProps {
+    pickerName: string;
     legendData: Array<{
         name: string;
         value: string;
